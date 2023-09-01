@@ -72,7 +72,7 @@ pub struct ClientBackup {
 }
 
 impl ClientBackup {
-    /// Align an ecoded message size up for better privacy
+    /// Align an encoded message size up for better privacy
     fn get_alignment_size(len: usize) -> usize {
         let padding_alignment = 16 * 1024;
         ((len.saturating_sub(1) / padding_alignment) + 1) * padding_alignment
@@ -89,7 +89,7 @@ impl ClientBackup {
         Ok(bytes)
     }
 
-    /// Decode from a plaintexet (possibly aligned) message
+    /// Decode from a plaintext (possibly aligned) message
     fn decode(msg: &[u8]) -> Result<Self> {
         Ok(Decodable::consensus_decode(
             &mut &msg[..],

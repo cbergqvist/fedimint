@@ -394,7 +394,7 @@ impl PlaintextEcashBackup {
         }
     }
 
-    /// Align an ecoded message size up for better privacy
+    /// Align an encoded message size up for better privacy
     fn get_alignment_size(len: usize) -> usize {
         // TODO: should we align to power of 2 instead?
         let padding_alignment = 16 * 1024;
